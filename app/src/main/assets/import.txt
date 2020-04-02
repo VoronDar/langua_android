@@ -1,0 +1,185 @@
+~generated file - don't change
+[w#creature#t#translate#m#meaning#mn#meaning native#tr#transcription#s#synonym#a#antonym#as#mem#p#practice|pr2|pr3#pn#practice native#h#help#g#group#pa#part#l#0#lp#0#d#0#e#example#en#пример#]
+[w## t## m## mn## tr## s## a## p## pn## h## g## pa## e## en##]
+~
+{c}
+<##
+
+[id#C1# w#creature# t#существо, создание# m#anything that lives but is not a plant# mn#живая особь# tr#ˈkriːtʃər#
+  p#I saw the creature last night|I saw this creature last night# pn#Я увидел это существо прошлой ночью#
+  e#Dolphins are intelligent creatures# en#Дельфины - умные существа#]
+
+[id#C2# w#magnify# t#увеличивать# m#to make something look larger than it is, especially by looking at it through a lens#
+  mn#делать что-либо больше, чем оно есть на самом деле, смотря на него сквозь линзу# tr#ˈmæɡnɪfaɪ#
+  p#I'm going to magnify the image|I am going to magnify the image|I am going to magnify this image|I'm going to magnify this image# pn#Я собираюсь увеличить это изображение#
+  e#Dolphins are intelligent creatures# en#Мне удалось увеличить изображение# pa#verb#]
+
+[id#C3# w#feature# t#особенность# m#a typical quality or an important part of something# mn#типичное качество или важная часть чего-либо#
+   tr#fiː.tʃər#  p#People say my hair is my best feature|People say that my hair is my best feature# pn#Люди говорят, что мои волосы - моя лучшая особенность#
+   e#Our latest model of phone has several new features# en#Наша последняя модель телефона имеет несколько новых функций#]
+
+[id#C4# w#doubt# t#сомнение, сомневаться# m#a feeling of not being certain about something, especially about how good or true it is#
+ mn#чувство неуверенности в чем-либо, особенно насколько что-либо правдиво# tr#daʊt#
+ p#I have no doubts about his abilities|I have no doubts about his possibilities|I haven't doubts about his abilities| I haven't doubts about his possibilities|I have no doubt about his abilities|I have no doubt about his possibilities|I haven't doubt about his abilities| I haven't doubt about his possibilities|I have no doubts in his abilities|I have no doubts in his possibilities|I haven't doubts in his abilities| I haven't doubts in his possibilities|I have no doubt in his abilities|I have no doubt in his possibilities|I haven't doubt in his abilities| I haven't doubt in his possibilities#
+ pn#Я не сомневаюсь в его способностях# h#сомневаться в (чем-либо) - to have doubt about (smt)#
+ pa#noun, verb# e#I never doubt his ability to do the job# en#Я никогда не сомневаюсь в его способности выполнять работу#]
+
+[id#C5# w#kettle# t#чайник# m#a container for boiling water, that has a lid, handle, and spout and is made from plastic or metal# mn#сосуд с ручкой и носиком для кипячения воды или заварки чая#
+ tr#ˈket.əl# p#We have to boil the kettle|We have to boil this kettle|We should to boil the kettle|We should to boil this kettle# pn#Мы должны вскипятить этот чайник#
+  e#to start to boil water in a kettle# en#Начать кипятить воду в чайнике#]
+
+[id#C6# w#chin# t#подбородок# m#the part of a person's face below their mouth# mn#округло выступающая на лице передняя часть нижней челюсти#
+ tr#tʃɪn#  p#A leader should have a strong chin|A leader must have a strong сhin# pn#Лидер должен иметь сильный подбородок#  e#Her chin resting in her hands# en#Ее подбородок покоится в ее руках#]
+
+[id#C7# w#anymore# t#(никогда) больше# m#used when something does not happen in future or now# mn#используется в случае, когда действие не будет выполняться в будущем или прямо сейчас#
+ tr#/ˌen.iˈmɔːr# p#I can't do that anymore|I can not do this anymore|I can't do this anymore|I can not do that anymore# pn#Я больше не могу этого делать#
+ h#всегда ставится в конец грамматической основы# pa#adverb# e#I don't do yoga anymore# en#Я больше не занимаюсь йогой#]
+
+[id#C8# w#wrongly# t#ошибочно# m#not correctly# mn#неправильный способ делать что-либо# tr#ˈrɒŋ.li#
+p#He wrongly did this exercise|He wrongly did the exercise# pn#Он неправильно сделал это упражнение#
+h#является наречием - поэтому используется только в связи с глаголами, для существительных используйте wrong# pa#adverb# e#Several people were wrongly convicted# en#Несколько человек были ошибочно осуждены#]
+
+[id#C9# w#assume# t#предполагать, принимать на веру# m#to accept something to be true without question or proof# mn#принимать что либо без доказательств#
+ tr#əˈsjuːm# s#believe#  p#We assume that such changes are possible|We assume that these changes are possible|We assume such changes are possible|We assume these changes are possible#
+  pn#Мы предполагаем, что такие изменения возможны# h#понимайте разницу между assume и presume, несмотря на то, что оба эти слова переводятся, как "предполагать", их нельзя назвать синонимами. Assume следует использует в случае отсутствия веских доказательств, в то время как presume подразумевает их наличие. Assume также является синонимом слова believe, но в отличие от последнего, assume использутеся, когда человек не до конца уверен в своей правоте#
+ pa#verb# e#I assumed that you had gone out# en#Я предполагал, что ты вышел#]
+
+[id#C10# w#wonder# t#интересоваться, желать знать# m#to want to know something or to try to understand the reason for something#
+mn#хотеть узнать или понять что-либо# tr#ˈwʌndər#p## pn## h#слово буквально означает 'спрашивать себя', поэтому нельзя писать "I wonder myself"# pa#verb# e#I wonder what he's making for dinner# en#Я задаюсь вопросом, что он делает на ужин#]
+
+[id#C11# w#entire# t#весь, целый# m#whole or complete# mn#весь, целый, полностью# tr#ɪnˈtaɪər# s#all, whole#
+p#We spent an entire year playing computer games# pn#Мы потратили целый год, играя в компьютерные игры#
+h#всегда ставится впереди существительного, а не наоборот: ВСЮ ее жизнь - her ENTIRE life\nВажно понимать разницу между all, whole и entire. Entire более похож на whole, эти слова употребляются с исчисляемыми существительными, в отличие от all, который имеет также значение "все". Также entire используется для того, чтобы показать масштаб"# pa#adjective# e#She spent her entire life caring for other people# en#Она потратила всю свою жизнь, заботясь о других людях#]
+
+[id#C12# w#connect# t#(под)соединять, связывать# m#to join two things or places together# mn#связывать 2 вещи вместе#
+tr#kəˈnekt# s#join# a#disconnect# p#I see pictures and connect them# pn#Я вижу картинки и соединяю их# pa#verb# e#Cannot connect to database, please check your Internet connection# en#Не удается подключиться к базе данных, пожалуйста, проверьте подключение к Интернету#]
+
+[id#C13# w#device# t#устройство# m#a piece of equipment that is used for a particular purpose# mn#оборудование, которое используется для определенной цели#
+tr#dɪˈvaɪs# p#The device should be on every planet|The device must be on every planet|This device should be on every planet|This device must be on every planet#
+pn#Такое устройство должно быть на каждой планете# e#A pager is a small, electronic device for sending messages# en#Пейджер - это небольшое электронное устройство для отправки сообщений#]
+
+[id#C14# w#energy# t#энергия# m#the power and ability to be very active without becoming tired# mn#способность быть активным, не уставая#
+tr#ˈenədʒi# p#I'm filled with the strengths and energy# pn#Я полон сил и енергии# e#Looking after children takes up a lot of time and energy# en#Присмотр за детьми отнимает много времени и сил#]
+
+[id#C15# w#relationship# t#отношения# m#the way two people or groups feel and behave towards each other# mn#то, как несколько человек ведут себя по отношению друг к другу#
+tr#rɪˈleɪʃənʃɪp# s#relation# p#I have a good relationship with my parents# pn#У меня хорошие отношения с моими родителями#
+h#практически всегда используется в одинственном числе# e#Our relationship is time-tested# en#Наши отношения прошли испытание временем#]
+
+[id#C16# w#leftover# t#объедки# m#food that remains after a meal# mn#еда оставшаяся после потребления# tr#ˈleftˌəʊvər#
+ p#I have leftover chicken|I have got leftover chicken# pn#У меня есть остатки курицы#
+ h#если это существительное, то используется только во множественном числе, если это прилагательное, то ставится перед существительным без каких либо предлогов# pa#noun, adjective#
+ en#У меня есть остатки курицы или же мы можем заказать пиццу# e#I have some leftover chicken or we could order pizza#]
+
+[id#C17# w#cockroach# t#таракан# m#a large, brown or black insect that can live in houses and places where food is prepared# mn#Прямокрылое всеядное насекомое, вредитель в хозяйстве#
+tr#ˈkɒkrəʊtʃ# p#I think that it's a cockroach|I think that it is a cockroach|I think it's a cockroach|I think it is a cockroach|I think this is a cockroach|I think that this is a cockroach# pn#Я думаю, что это таракан# e#Cockroaches are insects# en#Тараканы - это насекомые#]
+
+[id#C18# w#able# t#мочь, иметь возможность# m#to have the ability to do something or the possibility of doing something# mn#иметь возможность сделать что-либо#
+tr#ˈeɪbl# s#can, capable# p#He will be able to help you|He'll be able to help you# pn#Он будет способен помочь тебе#
+h#используется в конструкции be able to (do something)# pa#adjective# e#Currently, Lithuania is not able to undertake such extensive commitments#
+en#В настоящее время Литва не в состоянии взять на себя такие широкие обязательства#]
+
+[id#C19# w#instant# t#мгновенный, немедленный# m#happening immediately# mn#происходящий немедленно# tr#ˈɪnstənt# s#moment, minute#
+p#don't wait for instant results|do not wait for instant results# pn#Не ждите мнгновенных результатов# h#instant food - быстрозаваримая|растворимая еда#
+pa#adjective# e#And that's why we drink Campfire Gold instant coffee# en#Поэтому мы и пьём растворимый кофе Кэмпфайр Голд#]
+
+[id#C20# w#oatmeal# t#овсянка# m#a type of flour made from oats# mn#крупа, сделанная из овса# tr#ˈəʊt.miːl#
+e#Amy, this oatmeal's a little underdone this morning# en#Эми, овсяная каша сегодня слегка недоварена#
+p#Oatmeal is my favourite cereal# pn#Овсянка - моя любимая каша#]
+
+[id#C21# w#heater# t#нагреватель, обогреватель# m#a device that produces heat# mn#устройство, которое производит тепло# tr#ˈhiː.tə#
+p#We built this big heater# pn#Мы построили этот большой обогреватель#
+e#And when it gets to that temperature, the heater turns off# en#И когда достигается нужная температура, нагреватель отключается#]
+
+[id#C22# w#hidden# t#спрятанный, скрытый# m#not easy to find# mn#что-то, что нелегко найти# tr#ˈhɪd.ən# s#covert#
+p#There were hidden cameras in the room|There were hidden cameras in this room# pn#В этой комнате были скрытые камеры#
+pa#adjective# e#There were hidden microphones in the room to record their conversation# en#В комнате были спрятаны микрофоны, чтобы записать их разговор#]
+
+[id#C23# w#underneath# t#ниже, под# m#under or below# mn#ниже чего либо# tr#ˌʌn.dəˈniːθ# s#under#
+p#They found a bomb underneath the car|They found a bomb underneath this car# pn#Они нашли бомбу под этой машиной (здесь НЕ используются слова under или below)#
+pa#preposition, adverb# e#The tunnel goes right underneath the city# en#Туннель идет прямо под городом#]
+
+[id#C24# w#boil# t#кипятить# m#to reach, or cause something to reach, the temperature at which a liquid starts to turn into a gas# mn#приводить воду в газообразное состояние#
+tr#bɔɪl# p#We need to boil some water|We have to boil some water# pn#Нам нужно вскипятить немного воды# pa#verb#
+e#She scalded herself on some boiling water# en#Она ошпарилась на кипящей воде#]
+
+[id#C25# w#steam# t#пар# m#the hot gas that is produced when water boils# mn#горячий газ испускаемый при кипении#
+tr#stiːm# e#The pump is driven by steam# en#Насос приводится в движение паром#
+p#The shower room was full of steam|This shower room was full of steam# pn#Эта душевая комната была полна пара#]
+
+[id#C26# w#cause# t#причина, вызывать# m#the reason why something happens# mn#причина, по которой что-то происходит#
+ tr#kɔːz# s#reason#  p#I don't think he had any cause to complain|I don't think that he had any cause to complain# pn#Я не думаю, что у него были причины жаловаться (здесь Не используется слово reason)# pa#noun, verb# e#He's never given me any cause for concern# en#Она никогда не давала мне причин для беспокойства#]
+
+[id#C27# w#bend# t#искривлять, искривляться, сгибать, сгибаться, изгиб, сгиб# m#to become curved, or to make something become curved# mn#делать что то кривым или искривляться самому# tr#bend#
+s#curse# p#She bent the bar|She bent this bar# pn#Она согнула эту балку# pa#verb# e#The trees were bending in the wind# en#Деревья искривлялись на ветру#]
+
+[id#C28# w#pour# t#наливать# m#to make a liquid flow from or into a container# mn#лить жидкость в контейнер#
+tr#pɔːr# p#I can pour you some tea# pn#Я могу налить тебе чаю# pa#verb# e#I poured the milk into a jug# en#Я налил воду в кувшин#]
+
+[id#C29# w#distract# t#отвлекать# m#to make someone stop giving their attention to something# mn#мешать кому то концентрироваться на чем-то#
+tr#dɪˈstrækt# p#Don't distract them# pn#Не отвлекай их# pa#verb# e#Stop distracting me - I'm trying to finish my essay# en#Не отвлекай меня - я пытаюсь закончить свое эссе#]
+
+[id#C30# w#infinitesimal# t#мальчайший# m#extremely small, moving to zero# mn#крайне маленький, стремящийся к нулю# tr#ˌɪn.fɪ.nɪˈtes.ɪ.məl#
+p#These creatures are infinitesimal# pn#Эти создания бесконечно малые# g#formal# pa#adjective#
+e#The amounts of radioactivity present were infinitesimal# en#Количество радиоактивности было мельчайшим#]
+
+[id#C31# w#itsy-bitsy# t#малюсенький, крошечный# m#extremely small# mn#крайне маленький# tr#ˌɪt.siˈbɪt.si# h#Не используется в формальной речи#
+p#The itsy-bitsy spider# pn#Этот малюсенький паучок# g#humorous# pa#adjective# e#There are many itsy-bitsy spiders# en#Здесь много малюсеньких паучков#]
+
+[id#C32# w#weakling# t#слабак, слабый человек# m#someone who is weak, either physically or in character# mn#кто то слабый физически или морально# tr#ˈwiːklɪŋ#
+ p#You are weakling# pn#Ты слабак# h#Не используется в формальной речи# g#disapproving# e#Exercise can turn a weakling into a big, tough guy# en#Упражнения могут обратить слабака в большого, крутого парня#]
+
+[id#C33# w#refrigerator# t#холодильник# m#a piece of kitchen equipment that uses electricity to preserve food at a cold temperature#
+mn#Кухонное оборудование, которое поддерживает холодную температуру для сохранения еды# tr#rɪˈfrɪdʒ.ər.eɪ.tər#
+p#I saw your fridge in his kitchen|I saw your refrigerator in his kitchen# pn#Я видел твой холодильник на его кухне# h#чаще в разговорной речи используется слово fridge, refrigerator используется в формальной речи#
+ g#old-fashioned# e#Store fruit juice in the refrigerator# en#Храни фруктовый сок в холодильнике#]
+
+[id#C34# w#stove# t#плита# m#a piece of equipment that burns fuel or uses electricity in order to heat a place# mn#Кухонное оборудование, которое используют для приготовления еды# tr#stəʊv#
+s#plate# p#You can cook something on this stove# pn#Вы можете приготовить что-нибудь на этой плите#  e#She got some eggs out and heated a pan on the stove# en#Она достала несколько яиц и разогревала сковороду на плите#]
+
+[id#C35# w#bustle# m#do things in a quick, busy way# mn#двигаться или делать что-либо быстро и небрежно# t#сновать, суетиться# tr#ˈbʌs.əl#
+p#stop bustling!# pn#перестань суетиться!# pa#verb# en#Вокруг суетилось множество покупателей# e#There were lots of shoppers bustling about#]
+
+[id#C36# w#bustle# m#Busy activity# mn#Сумбурная деятельность# t#суета# tr#ˈbʌs.əl#
+p#The bustle of city is tiring me|City bustle bores me# pn#Городская суета утомляет меня# e#I like the bustle of this city# en#Я люблю суматоху этого города#]
+
+[id#C37# w#fall off# t#спадать# m#to get lower in amount or level# mn#когда количество чего-либо уменьшается# p#The poverty is falling off this year# pn#бедность падает в этом году# pa#phrasal verb# e#Sales have been falling off recently# en#Продажи в последнее время падают#]
+
+[id#C38# w#fall-off# t#спад# m#a reduction in the amount or quality of something# mn#уменьшение количества, качества чего-либо#
+p#The fall-off of poverty# pn#Спад бедности# e#We have seen seen a dramatic falloff of demand in the final quarter# en#Мы видели резкое падение спроса в последнем квартале#]
+
+[id#C39# w#irrelevant# t#неважно, неуместно, не имеет значения# m#not related to what is being discussed# mn#то, что не относится к теме разговора и не рассматривается#
+tr#ɪˈrel.ə.vənt# p#What she confined is irrelevant# pn#То, что она сказала, не имеет значение# pa#adjective# e#These documents are irrelevant to the investigation#
+en#Эти документы неуместны к расследованию#]
+
+[id#C40# w#den# t#нора, берлога, логово# m#the home of particular types of wild animal# mn#дом для некоторых диких животных#
+tr#den# p#She walked into the lion's den# pn#Она пришла в логово льва# e#You're walking into the lion's den# en#Ты идешь прямо в логово льва#]
+
+[id#C41# w#salad# t#салат# m#a mixture of vegetables eaten as a separate dish# mn#смесь из овощей, являющаяся отдельным блюдом# tr#ˈsæl.əd#
+p#This is the best salad i have ever eaten|This is the best salad i have ever eaten# pn#Это лучший салат, который я когда-либо ел#
+e#And she cannot eat chicken salad# en#И ещё она терпеть не может куриный салат#]
+
+[id#C42# w#come on# t#давай, ну-же# m#used to encourage someone to do something, to hurry, to try harder, etc# mn#используется для мотивирования кого-либо#
+p#Come on! Do that!|Come on! Do it!|Come on! Do this!# pn#Давай же! Сделай это!# g#informal# pa#phrasal verb# e#Come on! We're going to be late# en#Давай же! Мы опоздываем!#]
+
+[id#C43# w#burn out# t#угасать, сгорать, перегорать# m#If a fire burns out, it stops producing flames because nothing remains that can burn#
+mn#когда пламя начинает производить меньше огня# p#Our house has completely burned out|Our house has completely burnt out|Our house completely burned out|Our house completely burnt out|Our house is completely burned out|Our house is completely burnt out#
+ pn#Наш дом полностью сгорел# pa#phrasal verb# e#The engine has burned out# en#Двигатель перегорел#]
+
+[id#C44# w#warm up# t#разминаться, разогреваться# m#reach a sufficiently high temperature# mn#достичь достаточно высокой температуры#
+p#Her kettle is warming-up|Her kettle is warming up# pn#Ее чайник разогревается# pa#phrasal verb# e#They were warming-up before the match# en#Они разминались перед матчем#]
+
+[id#C45# w#give off# t#выделять, испускать# m#to produce heat, light, a smell, or a gas# mn#производить тепло, свет, запах или газ#
+p#The boiling water gives off steam|Boiling water gives off steam# pn#Кипящая вода выделяет пар# pa#phrasal verb#
+e#"The fire was giving off a lot of smoke# en#Огонь выделял много дыма#]
+
+[id#C46# w#heat up# t#нагревать, подогревать# m#to make something become hot or warm, or to become hot or warm# mn#Нагревать что то или нагреваться самому#
+p#I can heat up some pasta# pn#Я могу подогреть немного пасты# pa#phrasal verb# e#I'll just heat up some soup# en#Я подогрею немного супа#]
+
+[id#C47# w#start out# t#начинать# m#to begin to do something# mn#Начать делать что-либо#
+p#She started out as baker# pn#Она начинала как пекарь# h#для того что бы сказать "начать (свою карьеру) будучи кем-то" нужно использовать конструкцию start out as somebody#
+pa#phrasal verb# e#He started out as a teacher# en#Он начинал как учитель#]
+
+[id#C48# w#hang on# t#подождать# m#to wait for a short time# mn#Подождать немного#
+p#Hang on a minute# pn#Подожди минуту# pa#phrasal verb# e#Hang on a minute - I'll be with you in a moment!# en#Подожди минуту - я сейчас подойду#]
+
+>

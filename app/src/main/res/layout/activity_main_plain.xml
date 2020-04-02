@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation = "vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    tools:context=".activities.mainPlain"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:id = "@+id/fragment_container">
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:background="@color/colorWhite"
+        android:layout_gravity="center"
+        android:padding = "10dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent">
+
+        <ImageView
+            android:id="@+id/planIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="false"
+            app:srcCompat="@drawable/plan_icon" />
+        <ImageView
+            android:id="@+id/poolIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="false"
+            app:srcCompat="@drawable/pool_icon" />
+        <ImageView
+            android:id="@+id/libIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="false"
+            app:srcCompat="@drawable/kibrary_icon" />
+        <ImageView
+            android:id="@+id/statIcon"
+            android:layout_width="match_parent"
+            android:visibility = "gone"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="false"
+            app:srcCompat="@drawable/stat_icon" />
+        <ImageView
+            android:id="@+id/settingsIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility = "visible"
+            android:layout_weight="1"
+            android:adjustViewBounds="false"
+            app:srcCompat="@drawable/settings_icon" />
+
+    </LinearLayout>
+
+</LinearLayout>

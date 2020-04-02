@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#faf8f6"
+    android:padding = "16dp"
+    tools:context="activities.testTranslate">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="3dp"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/colorWhite">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/part"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/command_translate_word"
+                    android:background="@color/colorWhiteTranslate"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="23sp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:text="example"
+                    android:textColor="@color/colorWhiteTranslate"
+                    android:textSize="32sp" />
+                <LinearLayout
+                    android:id = "@+id/meaning_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:layout_weight="2">
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="addMem"
+                    android:scaleType="fitCenter"
+                    android:visibility="visible"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/child" />
+                <TextView
+                    android:id="@+id/meaning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="3"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:text="example example example example example example"
+                    android:textColor="@color/colorWhiteTranslate"
+                    android:textSize="18sp" />
+                </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <FrameLayout
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:layout_width="match_parent">
+
+                    <LinearLayout android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:padding = "5dp"
+                        android:weightSum="2"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <ImageView
+                                android:id="@+id/sound1"
+                                android:layout_width="0dp"
+                                android:padding = "40dp"
+                                android:gravity = "center"
+                                android:layout_height="wrap_content"
+                                android:onClick="selectSound"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:visibility="visible"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/playsoundtest" />
+                            <ImageView
+                                android:id="@+id/sound2"
+                                android:layout_width="0dp"
+                                android:padding = "40dp"
+                                android:gravity = "center"
+                                android:layout_height="wrap_content"
+                                android:onClick="selectSound"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:visibility="visible"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/playsoundtest" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:weightSum="2">
+
+                            <ImageView
+                                android:id="@+id/sound3"
+                                android:layout_width="0dp"
+                                android:padding = "40dp"
+                                android:gravity = "center"
+                                android:layout_height="wrap_content"
+                                android:onClick="selectSound"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:visibility="visible"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/playsoundtest" />
+                            <ImageView
+                                android:id="@+id/sound4"
+                                android:layout_width="0dp"
+                                android:padding = "40dp"
+                                android:gravity = "center"
+                                android:layout_height="wrap_content"
+                                android:onClick="selectSound"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:visibility="visible"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/playsoundtest" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+<ImageView
+    android:layout_width="match_parent"
+    android:adjustViewBounds="true"
+    android:padding = "5dp"
+    android:layout_height="match_parent"
+    app:srcCompat="@drawable/choseblock"/>
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_weight="2">
+                    <Button
+                        android:id="@+id/check"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/colorWhite"
+                        android:onClick="answerClick"
+                        android:stateListAnimator="@null"
+                        android:text="@string/check" />
+                    <Button
+                        android:id="@+id/next"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/colorWhite"
+                        android:onClick="goNext"
+                        android:stateListAnimator="@null"
+                        android:text="@string/next" />
+                    <Button
+                        android:id="@+id/skip"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:background="@color/colorWhite"
+                        android:onClick="skipTest"
+                        android:stateListAnimator="@null"
+                        android:text="@string/skip" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
