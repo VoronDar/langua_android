@@ -177,4 +177,26 @@ public class PhraseologyCard extends Card{
     public void setColumnWriteSentenceNative(String columnWriteSentenceNative) {
         this.columnWriteSentenceNative = columnWriteSentenceNative;
     }
+
+
+    @Override
+    public String toString() {
+        return super.toString()+
+                "-> PhraseologyCard{" +
+                "dialect='" + dialect + '\'' +
+                ", word='" + word + '\'' +
+                ", meaning='" + meaning + '\'' +
+                ", meaningNative='" + meaningNative + '\'' +
+                ", translate='" + translate + '\'' +
+                ", tip='" + tip + '\'' +
+                ", help='" + help + '\'' +
+                ", callHelp='" + callHelp + '\'' +
+                ", group='" + group + '\'' +
+                ", part='" + part + '\'' +
+                ", exampleLearn='" + exampleLearn + '\'' +
+                ", exampleTranslate='" + exampleTranslate + '\'' +
+                ", columnWriteSentence='" + columnWriteSentence + '\'' +
+                ", columnWriteSentenceNative='" + columnWriteSentenceNative + '\'' +
+                '}';
+    }
 }

@@ -137,4 +137,7 @@
     <string name="partInfo">Part of speech. If you do not specify anything, then the word will be considered as a noun</string>
     <string name="trainInfo">A sentence that you will train to write. It is necessary to learn how to use the word.</string>
     <string name="trainNativeInfo">Translation of the sentence you will train to write</string>
+    <string name="permission_blocked">The permission wasn\'t granted</string>
+    <string name="empty_file">The error while reading occurred</string>
+    <string name="read_file_error">file cannot be read -</string>
 </resources>

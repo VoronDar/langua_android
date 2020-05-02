@@ -113,4 +113,7 @@
     <string name="helpInfo">Особенности употребления слова, в которых вы можете допустить ошибку, к примеру, предлоги, отличия от синонимов</string>
     <string name="memInfo">Ваша ассоциация, которая может помочь вам запомнить слово</string>
     <string name="partInfo">Часть речи. Если вы ничего не укажете - то слово будет рассматриваться, как существительное</string>
+    <string name="permission_blocked">Не удалось получить разрешение</string>
+    <string name="empty_file">Ошибка чтения файла</string>
+    <string name="read_file_error">"Невозможно интерпретировать файл - "</string>
 </resources>

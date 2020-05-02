@@ -422,4 +422,32 @@ public class VocabularyCard extends Card{
                 getPart().equals(another.getPart()) &&
                 getWord().equals(another.getWord());
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "-> VocabularyCard{" +
+                "dialect='" + dialect + '\'' +
+                ", word='" + word + '\'' +
+                ", meaning='" + meaning + '\'' +
+                ", meaningNative='" + meaningNative + '\'' +
+                ", translate='" + translate + '\'' +
+                ", transcription='" + transcription + '\'' +
+                ", image='" + image + '\'' +
+                ", tip='" + tip + '\'' +
+                ", synonym='" + synonym + '\'' +
+                ", antonym='" + antonym + '\'' +
+                ", help='" + help + '\'' +
+                ", callHelp='" + callHelp + '\'' +
+                ", group='" + group + '\'' +
+                ", part='" + part + '\'' +
+                ", exampleLearn='" + exampleLearn + '\'' +
+                ", exampleTranslate='" + exampleTranslate + '\'' +
+                ", readSentence='" + readSentence + '\'' +
+                ", readSentenceAnswners='" + readSentenceAnswners + '\'' +
+                ", columnWriteSentence='" + columnWriteSentence + '\'' +
+                ", columnWriteSentenceNative='" + columnWriteSentenceNative + '\'' +
+                ", simular='" + simular + '\'' +
+                '}';
+    }
 }

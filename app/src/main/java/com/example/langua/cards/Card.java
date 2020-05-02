@@ -61,4 +61,16 @@ public class Card {
     public void setMem(String mem) {
         this.mem = mem;
     }
+
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "id='" + id + '\'' +
+                ", repeatlevel=" + repeatlevel +
+                ", practiceLevel=" + practiceLevel +
+                ", repetitionDat=" + repetitionDat +
+                ", mem='" + mem + '\'' +
+                '}';
+    }
 }

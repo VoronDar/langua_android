@@ -23,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -53,6 +54,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
@@ -65,7 +68,7 @@ public class LibraryFragment extends Fragment {
     private VocabularyCardLibAdapter adapter;
     private static Context context;
     private ArrayList<VocabularyCardLibUnit> units;
-    private int request_code =1, FILE_SELECT_CODE =101;
+    private int request_code = 1, FILE_SELECT_CODE =101;
     private TextView textView;
     private String TAG ="mainactivty";
     public String  actualfilepath="";
@@ -159,8 +162,7 @@ public class LibraryFragment extends Fragment {
         });
     }
 
-    public static void downloadFile() {
-
+    public void downloadFile() {
         StringBuilder allText = null;
         BufferedReader reader = null;
         try {
@@ -197,7 +199,7 @@ public class LibraryFragment extends Fragment {
     }
 
 
-        public static void readImportFile(StringBuilder allText){
+        public void readImportFile(StringBuilder allText){
         ArrayList<VocabularyCard> cards = new ArrayList<>();
         String Id = null;
         TransportSQLInterface transportSql = MainTransportSQL.getTransport(VOCABULARY_INDEX, context);
@@ -210,8 +212,8 @@ public class LibraryFragment extends Fragment {
         Log.i("main", "startAnalyzeFile");
             try {
                 Stack<Character> stack = new Stack<>();
-                StringBuilder block = new StringBuilder("");
-                StringBuilder indicate = new StringBuilder("");
+                StringBuilder block = new StringBuilder();
+                StringBuilder indicate = new StringBuilder();
                 VocabularyCard card = new VocabularyCard();
 
                 final String id = "id";
@@ -237,6 +239,7 @@ public class LibraryFragment extends Fragment {
 
 
                 int count = 1;
+                Log.i("main", allText.toString());
                 for (Character n : allText.toString().toCharArray()) {
                     if (stack.size() > 0 && stack.peek().equals('~')) {
                         if (n.equals('~'))
@@ -260,7 +263,7 @@ public class LibraryFragment extends Fragment {
                                 stack.add(n);
                             else{
                                 String bl = block.toString();
-                                try {
+                                Log.i("main", "done");
                                     switch (indicate.toString()) {
                                         case "":
                                             Id = block.toString();
@@ -323,12 +326,8 @@ public class LibraryFragment extends Fragment {
                                             card.setId(Id + bl);
                                             break;
                                         default:
-                                            throw new Error("Indefined index - " + indicate.toString());
+                                            throw new NullPointerException("Indefined index - " + indicate.toString());
                                     }
-                                }
-                                catch (NumberFormatException e){
-                                    throw new Error("You have to use int-> " + bl);
-                                }
                                 block = new StringBuilder();
                                 indicate = new StringBuilder();
                                 stack.pop();
@@ -347,7 +346,7 @@ public class LibraryFragment extends Fragment {
                                 card = new VocabularyCard();
                                 //Log.i("main-card", "newCard");
                             } else {
-                                throw new Error("[");
+                                throw new NullPointerException("[");
                             }
                             break;
                         case '>':
@@ -355,13 +354,13 @@ public class LibraryFragment extends Fragment {
                                 //Log.i("main", "endCourse");
                                 stack.pop();
                             } else
-                                throw new Error("couldn't find simbol '<'");
+                                throw new NullPointerException("couldn't find simbol '<'");
                             break;
                         case '~':
                             if (stack.size() == 0)
                                 stack.add('~');
                             else
-                                throw new Error("couldn't find simbol '~");
+                                throw new NullPointerException("couldn't find simbol '~");
                             break;
                         case '}':
                             if (stack.peek().equals('{')) {
@@ -372,7 +371,7 @@ public class LibraryFragment extends Fragment {
                                 block = new StringBuilder("");
                                 stack.pop();
                             } else
-                                throw new Error("{");
+                                throw new NullPointerException("{");
                             break;
                         case ' ':
                             if (!stack.peek().equals('#'))
@@ -384,16 +383,21 @@ public class LibraryFragment extends Fragment {
                                 indicate.append(n);
                     }
                 }
-            } catch (Error e) {
-                Log.w("main", e.getMessage());
-                // do something
-                //return;
+            } catch (NumberFormatException e){
+                Log.i("main", "number analyze - " + e.toString());
+                Toast.makeText(getContext(), getString(R.string.read_file_error) + e.getMessage(), Toast.LENGTH_SHORT).show();
+                return;
+            } catch (NullPointerException e){
+                Log.i("main", "simple exeption - " + e.toString());
+                Toast.makeText(getContext(), getString(R.string.read_file_error) + e.getMessage(), Toast.LENGTH_SHORT).show();
+                return;
             } catch (Exception e){
-                Log.w("main", e.getCause());
+                Log.i("main", "emptyStack");
+                Toast.makeText(getContext(), getString(R.string.read_file_error), Toast.LENGTH_SHORT).show();
             }
             finally {
-
                 Log.i("main", "end");
+                Log.i("main", cards.toString());
 
                 ArrayList<String> allId = transportSql.getAllCardsId();
                 int count = 1;
@@ -488,7 +492,7 @@ public class LibraryFragment extends Fragment {
     private void openUserFile(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             // start runtime permission
-            Boolean hasPermission =( ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE)
+            boolean hasPermission =( ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED);
             if (!hasPermission){
                 Log.e(TAG, "get permision   ");
@@ -512,7 +516,7 @@ public class LibraryFragment extends Fragment {
                     //readfile();
                     showFileChooser();
                 }else {
-                    // show a msg to user
+                    Toast.makeText(getContext(),getString(R.string.permission_blocked), Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -535,21 +539,22 @@ public class LibraryFragment extends Fragment {
         if (requestCode == FILE_SELECT_CODE){
             if (resultCode == mainPlain.RESULT_OK){
                 try {
-                    Uri imageuri = data.getData();
                     InputStream stream = null;
                     String tempID= "", id ="";
                     Uri uri = data.getData();
+                    if (uri == null)
+                        throw new Exception(getString(R.string.empty_file));
                     Log.e(TAG, "file auth is "+uri.getAuthority());
                     fullerror = fullerror +"file auth is "+uri.getAuthority();
-                    if (imageuri.getAuthority().equals("media")){
-                        tempID =   imageuri.toString();
+                    if (uri.getAuthority().equals("media")){
+                        tempID =   uri.toString();
                         tempID = tempID.substring(tempID.lastIndexOf("/")+1);
                         id = tempID;
                         Uri contenturi = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
                         String selector = MediaStore.Images.Media._ID+"=?";
                         actualfilepath = getColunmData( contenturi, selector, new String[]{id}  );
-                    }else if (imageuri.getAuthority().equals("com.android.providers.media.documents")){
-                        tempID = DocumentsContract.getDocumentId(imageuri);
+                    }else if (uri.getAuthority().equals("com.android.providers.media.documents")){
+                        tempID = DocumentsContract.getDocumentId(uri);
                         String[] split = tempID.split(":");
                         String type = split[0];
                         id = split[1];
@@ -563,8 +568,8 @@ public class LibraryFragment extends Fragment {
                         }
                         String selector = "_id=?";
                         actualfilepath = getColunmData( contenturi, selector, new String[]{id}  );
-                    } else if (imageuri.getAuthority().equals("com.android.providers.downloads.documents")){
-                        tempID =   imageuri.toString();
+                    } else if (uri.getAuthority().equals("com.android.providers.downloads.documents")){
+                        tempID =   uri.toString();
                         tempID = tempID.substring(tempID.lastIndexOf("/")+1);
                         id = tempID;
                         Uri contenturi = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
@@ -572,8 +577,8 @@ public class LibraryFragment extends Fragment {
                         actualfilepath = getColunmData( contenturi, null, null  );
 
 
-                    }else if (imageuri.getAuthority().equals("com.android.externalstorage.documents")){
-                        tempID = DocumentsContract.getDocumentId(imageuri);
+                    }else if (uri.getAuthority().equals("com.android.externalstorage.documents")){
+                        tempID = DocumentsContract.getDocumentId(uri);
                         String[] split = tempID.split(":");
                         String type = split[0];
                         id = split[1];
@@ -586,6 +591,10 @@ public class LibraryFragment extends Fragment {
                     // MessageDialog dialog = new MessageDialog(Home.this, " file details --"+actualfilepath+"\n---"+ uri.getPath() );
                     // dialog.displayMessageShow();
                     String temppath =  uri.getPath();
+
+                    if (temppath == null)
+                        throw new Exception(getString(R.string.empty_file));
+
                     if (temppath.contains("//")){
                         temppath = temppath.substring(temppath.indexOf("//")+1);
                     }
@@ -599,14 +608,15 @@ public class LibraryFragment extends Fragment {
                     Log.e(TAG, " myfile is "+ myFile.getAbsolutePath());
                     readfile(myFile);
                 } catch (Exception e) {
-                    Log.e(TAG, " read errro "+ e.toString());
+                    Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         }
     }
-    public String getColunmData( Uri uri, String selection, String[] selectarg){
+
+    private String getColunmData( Uri uri, String selection, String[] selectarg){
         String filepath ="";
-        Cursor cursor = null;
+        Cursor cursor;
         String colunm = "_data";
         String[] projection = {colunm};
         cursor =  mainPlain.activity.getContentResolver().query( uri, projection, selection, selectarg, null);
@@ -619,7 +629,7 @@ public class LibraryFragment extends Fragment {
             cursor.close();
         return  filepath;
     }
-    public void readfile(File file){
+    private void readfile(File file){
         // File file = new File(Environment.getExternalStorageDirectory(), "mytextfile.txt");
         StringBuilder builder = new StringBuilder();
         Log.e("main", "read start");
@@ -635,6 +645,7 @@ public class LibraryFragment extends Fragment {
 
         }catch (Exception e){
             Log.e("main", " error is "+e.toString());
+            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
         }
         //Log.e("main", " read text is "+ builder.toString());
     }

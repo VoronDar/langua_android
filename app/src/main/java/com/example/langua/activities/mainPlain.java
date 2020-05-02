@@ -154,59 +154,6 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
     protected void onCreate(Bundle savedInstanceState) {
         //Log.i("cpp", getCPPString());
 
-
-        //manager = (NotificationManager)getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-        /*
-        Notification.Builder builder = new Notification.Builder(getApplicationContext());
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            String CHANNEL_ID = "my_channel_01";
-            CharSequence name = "my_channel";
-            String Description = "This is my channel";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
-            mChannel.setDescription(Description);
-            mChannel.enableLights(true);
-            mChannel.setLightColor(Color.RED);
-            mChannel.enableVibration(true);
-            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
-            mChannel.setShowBadge(false);
-            manager.createNotificationChannel(mChannel);
-        }
-
-        Intent resultIntent = new Intent(getApplicationContext(), mainPlain.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(getApplicationContext());
-        stackBuilder.addParentStack(MainActivity.class);
-        stackBuilder.addNextIntent(resultIntent);
-        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(resultPendingIntent);
-
-        Intent intent = new Intent(getApplicationContext(), mainPlain.class);
-        builder
-                .setContentIntent(PendingIntent.getActivity(getApplicationContext(),0, intent, PendingIntent.FLAG_CANCEL_CURRENT))
-                .setTicker("HEY")
-                .setWhen(System.currentTimeMillis())
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.icon_vocabular_approach)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.icon_vocabular_approach))
-                .setContentTitle("click on me")
-                .setContentText("pleaseeee");
-
-        manager.notify(12, builder.build());
-        /*
-        builder
-                .setContentIntent(PendingIntent.getActivity(getApplicationContext(),0, intent, PendingIntent.FLAG_CANCEL_CURRENT))
-                .setTicker("HEY")
-                .setWhen(System.currentTimeMillis())
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.icon_vocabular_approach)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.icon_vocabular_approach))
-                .setContentTitle("click on me")
-                .setContentText("pleaseeee");
-        manager.notify(NotifyId, builder.build());
-
-         */
         if (activity == null)
             activity = this;
 
@@ -272,14 +219,6 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
             @Override
             public void onClick(View v) {
                 slideFragment(new PoolFragment());
-            }
-        });
-        pool.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-                getApplicationContext().startActivity(intent);
-                return false;
             }
         });
 

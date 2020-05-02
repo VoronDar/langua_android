@@ -422,7 +422,6 @@ public class Ruler {
         transportSQL.deleteRepeat();
         transportSQL.deleteStudy();
 
-        /*
         {
             transportSQL.addString(new VocabularyCard("C1", null, "creature",
                     "anything that lives but is not a plant", "живая особь", "существо, создание",
@@ -758,6 +757,7 @@ public class Ruler {
             //transportSQL.deleteRepeat();
             //transportSQL.deleteStudy();
 
+            /*
             transportSQL.addString(new VocabularyCard("C41", null, "come on",
                     "used to encourage someone to do something, to hurry, to try harder, etc", "используется для мотивирования кого-либо",
                     "давай, ну-же", null, null, null,
@@ -844,9 +844,11 @@ public class Ruler {
                     "этого достаточно", null, null, null,
                     null, "steady expression", "It's got enough food to feed a family of 4 for a week", "Здесь достаточно еды, чтобы неделю кормить семью из 4 человек",
                     "It is got enough water for 3 weeks|It's got enough for 3 weeks", "Этого хватит на 3 недели"));
+
+             */
         }
-        */
-        LibraryFragment.downloadFile();
+
+        //LibraryFragment.downloadFile();
 
         transportSQL.closeDatabases();
 
