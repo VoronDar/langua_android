@@ -116,4 +116,5 @@
     <string name="permission_blocked">Не удалось получить разрешение</string>
     <string name="empty_file">Ошибка чтения файла</string>
     <string name="read_file_error">"Невозможно интерпретировать файл - "</string>
+    <string name="select_file_error">Ошибка выбора файла</string>
 </resources>
