@@ -119,6 +119,9 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // изначально планировался частичный переход на с++
+        // но теперь я думаю, а нужно ли оно. Оно того явно не стоит...
         //Log.i("cpp", getCPPString());
 
         if (activity == null)
