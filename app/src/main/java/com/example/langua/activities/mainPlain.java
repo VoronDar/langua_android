@@ -61,41 +61,16 @@
 
 
 package com.example.langua.activities;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationBuilderWithBuilderAccessor;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
-import android.content.ContentUris;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Point;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.Display;
@@ -108,19 +83,11 @@ import android.widget.Toast;
 
 import com.example.langua.R;
 import com.example.langua.activities.statistics.statistics;
-import com.example.langua.cards.VocabularyCard;
 import com.example.langua.ruler.Ruler;
 import com.example.langua.transportPreferences.transportPreferences;
 
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Locale;
-import java.util.Stack;
 
 import static com.example.langua.activities.utilities.ActivitiesUtils.removeTitleBar;
 import static com.example.langua.activities.utilities.ActivitiesUtils.setOrientation;
@@ -205,6 +172,9 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
                 slideFragment(new LibraryFragment());
             }
         });
+
+
+        /* для тестирования
         library.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -212,6 +182,8 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
                 return true;
             }
         });
+
+         */
 
 
         ImageView pool =findViewById(R.id.poolIcon);
@@ -243,6 +215,7 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
 
             }
         });
+        /* для тестирования
         settings.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -252,6 +225,8 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
                 return true;
             }
         });
+
+         */
 
         Ruler.setTodayTables(this);
         putOffAction();
@@ -332,7 +307,6 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
                         putOffAction();
                     else{
                         slideFragment(new DayPlanFragment());
-                        return;
                     }
                 }
             });

@@ -422,6 +422,13 @@ public class Ruler {
         transportSQL.deleteRepeat();
         transportSQL.deleteStudy();
 
+
+        /*
+        * На данный момент здесь обновление карт из кода - надо будет потом перенести на файлы или перевести на облачную базу
+        *  данных. Оно работает, но если работать дальше, то стоит все же поменять этот момент
+        *
+        * */
+
         {
             transportSQL.addString(new VocabularyCard("C1", null, "creature",
                     "anything that lives but is not a plant", "живая особь", "существо, создание",
