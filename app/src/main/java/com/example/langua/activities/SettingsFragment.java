@@ -2,11 +2,8 @@ package com.example.langua.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,19 +22,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.langua.ApproachManager.ApproachManager;
 import com.example.langua.R;
 import com.example.langua.adapters.SettingsAdapter;
-import com.example.langua.adapters.VocabularyCardLibAdapter;
-import com.example.langua.cards.Card;
-import com.example.langua.cards.PhraseologyCard;
-import com.example.langua.cards.VocabularyCard;
 import com.example.langua.declaration.consts;
 import com.example.langua.transportPreferences.transportPreferences;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
 import com.example.langua.units.SettingUnit;
-import com.example.langua.units.VocabularyCardLibUnit;
-import com.google.android.material.internal.VisibilityAwareImageButton;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Locale;

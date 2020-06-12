@@ -1,24 +1,9 @@
 package com.example.langua.activities;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.ContentUris;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.telephony.mbms.MbmsErrors;
-import android.text.PrecomputedText;
-import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,10 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -40,27 +22,13 @@ import com.example.langua.Reader.ColodeImporter;
 import com.example.langua.Reader.FileReadable;
 import com.example.langua.adapters.VocabularyCardLibAdapter;
 import com.example.langua.cards.Card;
-import com.example.langua.cards.PhraseologyCard;
 import com.example.langua.cards.VocabularyCard;
-import com.example.langua.declaration.consts;
-import com.example.langua.transportSQL.TransportSQLInterface;
-import com.example.langua.transportSQL.TransportSQLPhraseology;
+import com.example.langua.Databases.transportSQL.TransportSQLInterface;
 import com.example.langua.units.VocabularyCardLibUnit;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQL;
+import com.example.langua.Databases.transportSQL.MainTransportSQL;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.EmptyStackException;
-import java.util.Stack;
 
-import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;
 import static com.example.langua.activities.mainPlain.smallWidth;
 

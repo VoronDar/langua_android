@@ -126,6 +126,13 @@ public class NewCardElementAdapter extends RecyclerView.Adapter<NewCardElementAd
         if (block.isRequired()){
             holder.name.setTextColor(context.getResources().getColor(R.color.colorBlue));
         }
+
+        if (!block.isEditable()) {
+            holder.value.setFocusable(false);
+            holder.value.setClickable(false);
+            holder.value.setTextColor(context.getResources().getColor(R.color.colorWhiteExample));
+        }
+
         if (isChange){
             block.setValue(block.getPrevValue());
             holder.value.setText(block.getValue());

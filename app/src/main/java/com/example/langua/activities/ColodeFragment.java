@@ -25,20 +25,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.langua.R;
 import com.example.langua.adapters.PracticeTypeAdapter;
-import com.example.langua.adapters.VocabularyCardLibAdapter;
 import com.example.langua.cards.Card;
-import com.example.langua.cards.PhraseologyCard;
 import com.example.langua.cards.VocabularyCard;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
+import com.example.langua.Databases.transportSQL.MainTransportSQL;
+import com.example.langua.Databases.transportSQL.TransportSQLInterface;
 import com.example.langua.units.PracticeTestsUnit;
-import com.example.langua.units.VocabularyCardLibUnit;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,9 +44,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;
-import static com.example.langua.activities.mainPlain.smallWidth;
 
 public class ColodeFragment extends Fragment {
 
@@ -142,7 +135,7 @@ public class ColodeFragment extends Fragment {
     }
 
 
-        public void readImportFile(StringBuilder allText){
+        private void readImportFile(StringBuilder allText){
         ArrayList<VocabularyCard> cards = new ArrayList<>();
         String Id = null;
         TransportSQLInterface transportSql = MainTransportSQL.getTransport(VOCABULARY_INDEX, context);
@@ -227,16 +220,16 @@ public class ColodeFragment extends Fragment {
                                             card.setMeaningNative(bl);
                                             break;
                                         case example:
-                                            card.setExampleLearn(bl);
+                                            card.setExample(bl);
                                             break;
                                         case exampleNative:
-                                            card.setExampleTranslate(bl);
+                                            card.setExampleNative(bl);
                                             break;
                                         case train:
-                                            card.setColumnWriteSentence(bl);
+                                            card.setTrain(bl);
                                             break;
                                         case trainNative:
-                                            card.setColumnWriteSentenceNative(bl);
+                                            card.setTrainNative(bl);
                                             break;
                                         case group:
                                             card.setGroup(bl);

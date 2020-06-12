@@ -1,11 +1,9 @@
 package com.example.langua.ruler;
 
-import android.content.ContentValues;
 import android.content.Context;
 
 import com.example.langua.cards.Card;
 import com.example.langua.declaration.consts;
-import com.example.langua.transportSQL.TransportSQLInterface;
 
 import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;

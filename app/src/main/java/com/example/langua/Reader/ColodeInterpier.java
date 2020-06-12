@@ -5,8 +5,8 @@ import android.util.Log;
 import com.example.langua.R;
 import com.example.langua.cards.Card;
 import com.example.langua.cards.VocabularyCard;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
+import com.example.langua.Databases.transportSQL.MainTransportSQL;
+import com.example.langua.Databases.transportSQL.TransportSQLInterface;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -20,6 +20,13 @@ class ColodeInterpier {
     private static final String importAsk = "a";
     private static final String importUpdate = "u";
     private static final String importLeave = "l";
+
+
+    /*
+        правила импорта: если импортируется
+
+
+     */
 
     static boolean readImportFile(StringBuilder allText, FileReadable activity){
         ArrayList<VocabularyCard> cards = new ArrayList<>();
@@ -104,16 +111,16 @@ class ColodeInterpier {
                                     card.setMeaningNative(bl);
                                     break;
                                 case example:
-                                    card.setExampleLearn(bl);
+                                    card.setExample(bl);
                                     break;
                                 case exampleNative:
-                                    card.setExampleTranslate(bl);
+                                    card.setExampleNative(bl);
                                     break;
                                 case train:
-                                    card.setColumnWriteSentence(bl);
+                                    card.setTrain(bl);
                                     break;
                                 case trainNative:
-                                    card.setColumnWriteSentenceNative(bl);
+                                    card.setTrainNative(bl);
                                     break;
                                 case group:
                                     card.setGroup(bl);
@@ -194,6 +201,8 @@ class ColodeInterpier {
                             throw new NullPointerException("{");
                         break;
                     case ' ':
+                    case '\n':
+                    case '\t':
                         if (!stack.peek().equals('#'))
                             break;
                     default:
@@ -277,13 +286,15 @@ class ColodeInterpier {
             }
         }
 
+        // сделать адекватный спрос
+
         for (int i = 0; i < cards.size(); i++){
-            ArrayList<Card> allSim = transportSql.getAllCardsByWord(cards.get(i).getWord());
-            if (allSim.size() > 0)
-            {
+        //    ArrayList<Card> allSim = transportSql.getAllCardsByWord(cards.get(i).getWord());
+        //    if (allSim.size() > 0)
+        //    {
                 //Log.i("main", "new");
-            }
-            else
+        //    }
+        //    else
                 transportSql.addString(cards.get(i));
         }
 

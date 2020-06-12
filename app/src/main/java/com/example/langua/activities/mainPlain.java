@@ -177,7 +177,7 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
         });
 
 
-        /* для тестирования
+        //для тестирования
         library.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -186,7 +186,6 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
             }
         });
 
-         */
 
 
         ImageView pool =findViewById(R.id.poolIcon);
@@ -218,7 +217,7 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
 
             }
         });
-        /* для тестирования
+        //для тестирования
         settings.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -228,8 +227,6 @@ public class mainPlain extends AppCompatActivity implements TextToSpeech.OnInitL
                 return true;
             }
         });
-
-         */
 
         Ruler.setTodayTables(this);
         putOffAction();

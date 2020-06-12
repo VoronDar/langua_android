@@ -1,12 +1,7 @@
-package com.example.langua.transportSQL;
+package com.example.langua.Databases.transportSQL;
 
 import android.content.Context;
 import android.util.Log;
-
-import com.example.langua.cards.Card;
-import com.example.langua.declaration.consts;
-
-import java.util.ArrayList;
 
 import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;

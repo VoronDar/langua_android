@@ -3,7 +3,6 @@ package com.example.langua.activities;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.print.PrintJob;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,13 +20,11 @@ import com.example.langua.R;
 import com.example.langua.declaration.consts;
 import com.example.langua.ruler.Ruler;
 import com.example.langua.adapters.ToDoAdapter;
-import com.example.langua.transportSQL.TransportSQL;
 import com.example.langua.units.toDoUnit;
 import com.example.langua.transportPreferences.transportPreferences;
 
 import java.util.ArrayList;
 
-import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;
 import static com.example.langua.activities.mainPlain.smallWidth;
 

@@ -141,4 +141,5 @@
     <string name="empty_file">The error while reading occurred</string>
     <string name="read_file_error">file cannot be read -</string>
     <string name="select_file_error">Select file error</string>
+    <string name="cources_get_failed">failed to get information about the courses</string>
 </resources>

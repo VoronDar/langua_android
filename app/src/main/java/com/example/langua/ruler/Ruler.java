@@ -1,17 +1,14 @@
 package com.example.langua.ruler;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.langua.R;
 import com.example.langua.activities.DayPlanFragment;
-import com.example.langua.activities.LibraryFragment;
 import com.example.langua.activities.MainActivity;
 import com.example.langua.activities.cardPhraseology;
-import com.example.langua.activities.mainPlain;
 import com.example.langua.activities.statistics.command.Command;
 import com.example.langua.activities.statistics.statistics;
 import com.example.langua.activities.testSentence;
@@ -20,12 +17,12 @@ import com.example.langua.activities.testTranslate;
 import com.example.langua.activities.testTranslateNative;
 import com.example.langua.activities.testWriting;
 import com.example.langua.activities.utilities.ActivitiesUtils;
-import com.example.langua.cards.VocabularyCard;
 import com.example.langua.cards.Card;
+import com.example.langua.cards.VocabularyCard;
 import com.example.langua.declaration.consts;
 import com.example.langua.transportPreferences.transportPreferences;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
+import com.example.langua.Databases.transportSQL.MainTransportSQL;
+import com.example.langua.Databases.transportSQL.TransportSQLInterface;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -33,8 +30,7 @@ import java.util.TimeZone;
 
 import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;
-import static com.example.langua.transportPreferences.transportPreferences.getTodayLeftPhraseologyRepeatCardQuantityPreference;
-import static com.example.langua.transportPreferences.transportPreferences.getTodayLeftPhraseologyStudyCardQuantityPreference;
+import static com.example.langua.declaration.consts.NOUN_LEVEL;
 import static com.example.langua.transportPreferences.transportPreferences.getTodayLeftVocabularyRepeatCardQuantityPreference;
 import static com.example.langua.transportPreferences.transportPreferences.getTodayLeftVocabularyStudyCardQuantityPreference;
 
@@ -429,6 +425,20 @@ public class Ruler {
         *
         * */
 
+        transportSQL.addString(new VocabularyCard("C1", NOUN_LEVEL, NOUN_LEVEL, 0, "creature", "anything that lives but is not a plant",
+                "живая особь", "существо, создание","|ˈkriːtʃər|", "being", null, null, null, null, "Dolphins are intelligent creatures",
+                "Дельфины - умные существа",
+                "[s:i]!pv:saw=0]an:creature*the=1]stt:night*last=1]", "Я увидел это существо прошлой ночью", null));
+
+        transportSQL.addString(new VocabularyCard("C2", NOUN_LEVEL, NOUN_LEVEL, 0, "magnify",
+                "to make something look larger than it is, especially by looking at it through a lens", "делать что-либо больше, чем оно есть на самом деле, смотря на него сквозь линзу", "увеличивать",
+                "|mæɡnɪfaɪ|", null, null, null, null,
+                "verb", "I was able to magnify the footage",
+                "Мне удалось увеличить изображение",
+                "I'm going to magnify the image|I am going to magnify the image|I am going to magnify this image|I'm going to magnify this image",
+                "Я собираюсь увеличить это изображение", null));
+
+        /*
         {
             transportSQL.addString(new VocabularyCard("C1", null, "creature",
                     "anything that lives but is not a plant", "живая особь", "существо, создание",
@@ -757,14 +767,17 @@ public class Ruler {
                     null,
                     "This is the best salad i have ever eaten|This is the best salad i have ever eaten", "Это лучший салат, который я когда-либо ел", null));
 
+            }
+            */
+         /*
+            {
+
             //transportSQL.closeDatabases();
 
             //transportSQL = MainTransportSQL.getTransport(PHRASEOLOGY_INDEX, context);
             //transportSQL.deleteCommon();
             //transportSQL.deleteRepeat();
             //transportSQL.deleteStudy();
-
-            /*
             transportSQL.addString(new VocabularyCard("C41", null, "come on",
                     "used to encourage someone to do something, to hurry, to try harder, etc", "используется для мотивирования кого-либо",
                     "давай, ну-же", null, null, null,
@@ -852,18 +865,17 @@ public class Ruler {
                     null, "steady expression", "It's got enough food to feed a family of 4 for a week", "Здесь достаточно еды, чтобы неделю кормить семью из 4 человек",
                     "It is got enough water for 3 weeks|It's got enough for 3 weeks", "Этого хватит на 3 недели"));
 
-             */
         }
-
+        */
         //LibraryFragment.downloadFile();
 
         transportSQL.closeDatabases();
 
-        transportSQL = MainTransportSQL.getTransport(PHRASEOLOGY_INDEX, context);
-        transportSQL.deleteCommon();
-        transportSQL.deleteRepeat();
-        transportSQL.deleteStudy();
-        transportSQL.closeDatabases();
+        //transportSQL = MainTransportSQL.getTransport(PHRASEOLOGY_INDEX, context);
+        //transportSQL.deleteCommon();
+        //transportSQL.deleteRepeat();
+        //transportSQL.deleteStudy();
+        //transportSQL.closeDatabases();
 
 
     transportPreferences.setTodayRepeatReturned(context, consts.DATABASE_LOAD_COMPLETED);

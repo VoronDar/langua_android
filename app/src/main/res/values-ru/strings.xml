@@ -117,4 +117,5 @@
     <string name="empty_file">Ошибка чтения файла</string>
     <string name="read_file_error">"Невозможно интерпретировать файл - "</string>
     <string name="select_file_error">Ошибка выбора файла</string>
+    <string name="cources_get_failed">не удалось получить информацию о курсах</string>
 </resources>

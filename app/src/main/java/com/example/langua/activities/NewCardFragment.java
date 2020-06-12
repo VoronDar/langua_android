@@ -2,16 +2,12 @@ package com.example.langua.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,20 +19,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.langua.ApproachManager.ApproachManager;
 import com.example.langua.R;
+import com.example.langua.SenteceCheck.SentenceChecker;
 import com.example.langua.adapters.NewCardElementAdapter;
-import com.example.langua.adapters.SettingsAdapter;
-import com.example.langua.cards.Card;
 import com.example.langua.cards.VocabularyCard;
-import com.example.langua.declaration.consts;
 import com.example.langua.transportPreferences.transportPreferences;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
-import com.example.langua.units.SettingUnit;
-import com.example.langua.units.VocabularyCardLibUnit;
+import com.example.langua.Databases.transportSQL.MainTransportSQL;
+import com.example.langua.Databases.transportSQL.TransportSQLInterface;
 import com.example.langua.units.newCardElementUnit;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class NewCardFragment extends Fragment {
 
@@ -119,33 +110,40 @@ public class NewCardFragment extends Fragment {
             units.add(new newCardElementUnit(getString(R.string.translate), initCard.getTranslate(), true, ElIds.transl));
             units.add(new newCardElementUnit(getString(R.string.meaningLearn), initCard.getMeaning(), true, ElIds.meaning));
             units.add(new newCardElementUnit(getString(R.string.meaningNative), initCard.getMeaningNative(), true, ElIds.meaningNative));
-            units.add(new newCardElementUnit(getString(R.string.exampleLearn), initCard.getExampleLearn(), false, ElIds.example));
-            units.add(new newCardElementUnit(getString(R.string.exampleNative), initCard.getExampleTranslate(), false, ElIds.exampleNative));
-            String train = initCard.getColumnWriteSentence();
+            units.add(new newCardElementUnit(getString(R.string.exampleLearn), initCard.getExample(), false, ElIds.example));
+            units.add(new newCardElementUnit(getString(R.string.exampleNative), initCard.getExampleNative(), false, ElIds.exampleNative));
+            String train = initCard.getTrain();
+
+
             int variantNum = 0;
             int index = units.size();
-            while (train.contains("|")){
-                if (variantNum == 0)
-                    units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn),
-                        train.substring(0, train.indexOf("|")), true, ElIds.train));
+            if (SentenceChecker.isDecodable(train)){
+                units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn),
+                        SentenceChecker.generateRightStringFromLib(train), true, ElIds.train, false));
+            } else {
+                while (train.contains("|")) {
+                    if (variantNum == 0)
+                        units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn),
+                                train.substring(0, train.indexOf("|")), true, ElIds.train));
 
-                //else
+                    //else
                     //units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn) +
-                   //     " (" + getString(R.string.variant) + ")",
+                    //     " (" + getString(R.string.variant) + ")",
                     //    train.substring(0, train.indexOf("|")), false, ElIds.train));
-                //train = train.substring(train.indexOf("|") + 1);
-                variantNum++;
-                break;
+                    //train = train.substring(train.indexOf("|") + 1);
+                    variantNum++;
+                    break;
 
+                }
+                if (variantNum == 0)
+                    units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn), train, true, ElIds.train));
             }
-            if (variantNum == 0)
-                units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn), train, true, ElIds.train));
             //else
             //    units.add(new newCardElementUnit(getString(R.string.exampleTrainLearn) +
             //            " (" + getString(R.string.variant) + ")", train, false, ElIds.train));
             adapter.setLastSentenceIndex(variantNum+index);
 
-            units.add(new newCardElementUnit(getString(R.string.exampleTrainNative), initCard.getColumnWriteSentenceNative(), true, ElIds.trainNative));
+            units.add(new newCardElementUnit(getString(R.string.exampleTrainNative), initCard.getTrainNative(), true, ElIds.trainNative));
             units.add(new newCardElementUnit(getString(R.string.part), initCard.getPart(), false, ElIds.part));
             units.add(new newCardElementUnit(getString(R.string.group), initCard.getGroup(), false, ElIds.group));
             units.add(new newCardElementUnit(getString(R.string.synonym), initCard.getSynonym(), false, ElIds.synonym));
@@ -207,11 +205,11 @@ public class NewCardFragment extends Fragment {
                             continue;
                     }
                     else if (n.getId() == ElIds.train && n.getValue() != null){
-                        if (card.getColumnWriteSentence() == null) {
-                            card.setColumnWriteSentence(n.getValue());
+                        if (card.getTrain() == null) {
+                            card.setTrain(n.getValue());
                         }
                         else
-                            card.setColumnWriteSentence(card.getColumnWriteSentence() +
+                            card.setTrain(card.getTrain() +
                                     "|" + n.getValue());
                         isWriteLearn = true;
                         continue;
@@ -219,7 +217,7 @@ public class NewCardFragment extends Fragment {
                     else if (n.getId() == ElIds.train && isWriteLearn)
                         continue;
                     else if (n.getId() == ElIds.trainNative && n.getValue() != null){
-                        card.setColumnWriteSentenceNative(n.getValue());
+                        card.setTrainNative(n.getValue());
                         continue;
                     }
                     else if (n.getId() == ElIds.transl){
@@ -243,11 +241,11 @@ public class NewCardFragment extends Fragment {
                         continue;
                     }
                     else if(n.getId() == ElIds.example){
-                        card.setExampleLearn(n.getValue());
+                        card.setExample(n.getValue());
                         continue;
                     }
                     else if(n.getId() == ElIds.exampleNative){
-                        card.setExampleTranslate(n.getValue());
+                        card.setExampleNative(n.getValue());
                         continue;
                     }
                     else if(n.getId() == ElIds.mem){

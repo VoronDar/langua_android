@@ -20,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.langua.R;
+import com.example.langua.SenteceCheck.SentenceChecker;
 import com.example.langua.activities.utilities.ActivitiesUtils;
 import com.example.langua.activities.utilities.Test;
 import com.example.langua.activities.utilities.TrasportActivities;
@@ -32,6 +33,7 @@ import com.example.langua.ruler.Ruler;
 import java.util.ArrayList;
 
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;
+import static com.example.langua.SenteceCheck.SentenceChecker.isDecodable;
 import static com.example.langua.activities.utilities.ActivitiesUtils.removeTitleBar;
 import static com.example.langua.activities.utilities.ActivitiesUtils.setOrientation;
 
@@ -59,7 +61,7 @@ public class testSentence extends Test {
 
             TextView word = this.view.findViewById(R.id.word);
             if (index == VOCABULARY_INDEX)
-                writeSentence = ((VocabularyCard) card).getColumnWriteSentenceNative();
+                writeSentence = ((VocabularyCard) card).getTrainNative();
             else
                 writeSentence = ((PhraseologyCard) card).getColumnWriteSentenceNative();
             word.setText(writeSentence);
@@ -91,34 +93,49 @@ public class testSentence extends Test {
 
 
     private String deleteOtherChar(String string){
-        return string.replaceAll("!|,|\n|\\?|\\.|\"| ", "");
+        return string.replaceAll("!|,|\n|\\?|\\.|\"", "");
     }
 
     public void answerClick(View view) {
 
 
         EditText editText = this.view.findViewById(R.id.editText);
-        String getText = deleteOtherChar(editText.getText().toString().trim().toLowerCase());
-        String answer;
-        if (index == VOCABULARY_INDEX)
-            answer = ((VocabularyCard)card).getColumnWriteSentence();
-        else
-            answer = ((PhraseologyCard)card).getColumnWriteSentence();
-        ArrayList<String> answers = new ArrayList<>();
 
+        VocabularyCard vocabularyCard = (VocabularyCard)card;
+        String rightString;
+        String describe;
 
-        while (answer.contains("|")){
-            String thisString = answer.substring(0, answer.indexOf("|"));
-            answer = answer.substring(answer.indexOf("|") + 1);
-            answers.add(thisString);
-            if (deleteOtherChar(thisString.trim().toLowerCase()).equals(getText)){
-                isRight = true;
-                }
+        if (isDecodable(vocabularyCard.getTrain())) {
+            isRight = SentenceChecker.check(deleteOtherChar(editText.getText().toString()), ((VocabularyCard) card).getTrain());
+            rightString = SentenceChecker.getRightString();
+            describe = SentenceChecker.showCommand();
         }
-        answers.add(answer.trim().toLowerCase());
-        Log.i("main", answer);
-        if (deleteOtherChar(answer.trim().toLowerCase()).equals(getText)){
-            isRight = true;
+        else{
+
+            String getText = deleteOtherChar(editText.getText().toString().trim().toLowerCase());
+            String answer;
+            if (index == VOCABULARY_INDEX)
+                answer = ((VocabularyCard)card).getTrain();
+            else
+                answer = ((PhraseologyCard)card).getColumnWriteSentence();
+            //ArrayList<String> answers = new ArrayList<>();
+
+
+            while (answer.contains("|")){
+                String thisString = answer.substring(0, answer.indexOf("|"));
+                answer = answer.substring(answer.indexOf("|") + 1);
+                //answers.add(thisString);
+                if (deleteOtherChar(thisString.trim().toLowerCase()).equals(getText)){
+                    isRight = true;
+                }
+            }
+           // answers.add(answer.trim().toLowerCase());
+            Log.i("main", answer);
+            if (deleteOtherChar(answer.trim().toLowerCase()).equals(getText)){
+                isRight = true;
+            }
+            rightString = answer;
+            describe = "";
         }
 
         if (isRight){
@@ -126,21 +143,17 @@ public class testSentence extends Test {
             mainPlain.repeatTTS.speak(editText.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
         }
         else{
-            mainPlain.repeatTTS.speak(answers.get(0), TextToSpeech.QUEUE_FLUSH, null);
+            mainPlain.repeatTTS.speak(rightString, TextToSpeech.QUEUE_FLUSH, null);
             AlertDialog.Builder adb = new AlertDialog.Builder(mainPlain.activity);
             View my_custom_view = getLayoutInflater().inflate(R.layout.error_layout, null);
             adb.setView(my_custom_view);
 
-            String rightAnswers = "";
-            for (String n: answers){
-                rightAnswers += n + "|\n";
-            }
-            rightAnswers = rightAnswers.substring(0, rightAnswers.length()-2);
-
             TextView rightAnswer = my_custom_view.findViewById(R.id.rightAnswer);
-            rightAnswer.setText(rightAnswers);
+
+
+            rightAnswer.setText(rightString);
             TextView yourAnswer = my_custom_view.findViewById(R.id.yourAnswer);
-            yourAnswer.setText(editText.getText());
+            yourAnswer.setText(editText.getText().toString() + "\n"  +  describe);
             adb.setOnCancelListener(new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {

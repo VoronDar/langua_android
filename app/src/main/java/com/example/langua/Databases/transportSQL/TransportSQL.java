@@ -1,4 +1,4 @@
-package com.example.langua.transportSQL;
+package com.example.langua.Databases.transportSQL;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,19 +8,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.langua.cards.VocabularyCard;
 import com.example.langua.ruler.CardRepeatManage;
 import com.example.langua.ruler.Ruler;
-import com.example.langua.contracts.VocabularyContract;
 import com.example.langua.cards.Card;
 import com.example.langua.declaration.consts;
 
 import java.util.ArrayList;
 
 import static android.provider.BaseColumns._ID;
-import static com.example.langua.contracts.Entry.COLUMN_PRACTICE_LEVEL;
-import static com.example.langua.contracts.Entry.COLUMN_REPEAT_LEVEL;
-import static com.example.langua.contracts.Entry.COLUMN_REPETITION_DAY;
-import static com.example.langua.contracts.VocabularyContract.VocabularyEntry.COLUMN_WORD;
+import static com.example.langua.Databases.contracts.Entry.COLUMN_REPEAT_LEVEL;
+import static com.example.langua.Databases.contracts.Entry.COLUMN_REPETITION_DAY;
+import static com.example.langua.Databases.contracts.VocabularyContract.VocabularyEntry.COLUMN_WORD;
 
 /*
 

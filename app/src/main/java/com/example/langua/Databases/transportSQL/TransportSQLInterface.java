@@ -1,7 +1,4 @@
-package com.example.langua.transportSQL;
-
-import android.content.Context;
-import android.database.Cursor;
+package com.example.langua.Databases.transportSQL;
 
 import com.example.langua.cards.Card;
 

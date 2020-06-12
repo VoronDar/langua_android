@@ -2,47 +2,31 @@ package com.example.langua.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.langua.ApproachManager.ApproachManager;
 import com.example.langua.R;
 import com.example.langua.activities.utilities.ActivitiesUtils;
-import com.example.langua.activities.utilities.SoundManager;
 import com.example.langua.activities.utilities.Test;
 import com.example.langua.activities.utilities.TrasportActivities;
-import com.example.langua.cards.Card;
 import com.example.langua.cards.PhraseologyCard;
 import com.example.langua.cards.VocabularyCard;
 import com.example.langua.declaration.consts;
-import com.example.langua.ruler.Ruler;
 import com.example.langua.transportPreferences.transportPreferences;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
-import com.example.langua.units.TextBlock;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import static com.example.langua.ApproachManager.ApproachManager.VOCABULARY_INDEX;
-import static com.example.langua.activities.utilities.ActivitiesUtils.getMeaningColor;
 import static com.example.langua.activities.utilities.ActivitiesUtils.getPreparedSoundManager;
-import static com.example.langua.activities.utilities.ActivitiesUtils.removeTitleBar;
-import static com.example.langua.activities.utilities.ActivitiesUtils.setOrientation;
 
 public class testTranslate extends Test {
 

@@ -71,7 +71,7 @@ public class MainActivity extends CardActivity {
             // add priorityMeaning
             boolean isInCardMeaning = false;
             if (isMeaning) {
-                    textBlocksList.add(new TextBlock(0, null, 0, card.getImage()));
+                    textBlocksList.add(new TextBlock(0, null, 0, card.getId()));
                     if (card.getMeaning() != null && transportPreferences.getMeaningLanguage(context) >= consts.LANGUAGE_NEW) {
 
                         textBlocksList.add(new TextBlock(21, card.getMeaning(), getMeaningColor(this.view)));
@@ -130,22 +130,22 @@ public class MainActivity extends CardActivity {
 
 
             if (transportPreferences.getExampleAvailability(context) == consts.AVAILABILITY_ON) {
-                if (card.getExampleLearn() != null && transportPreferences.getExampleLanguage(context) >= consts.LANGUAGE_NEW) {
-                    textBlocksList.add(new TextBlock(21, card.getExampleLearn(), getExampleColor(this.view), true));
+                if (card.getExample() != null && transportPreferences.getExampleLanguage(context) >= consts.LANGUAGE_NEW) {
+                    textBlocksList.add(new TextBlock(21, card.getExample(), getExampleColor(this.view), true));
                 }
-                if (card.getExampleTranslate() != null && ((transportPreferences.getExampleLanguage(context) == consts.LANGUAGE_NATIVE ||
+                if (card.getExampleNative() != null && ((transportPreferences.getExampleLanguage(context) == consts.LANGUAGE_NATIVE ||
                         transportPreferences.getExampleLanguage(context) == consts.LANGUAGE_BOTH)))
-                    textBlocksList.add(new TextBlock(17, card.getExampleTranslate(), getExampleColor(this.view), false));
+                    textBlocksList.add(new TextBlock(17, card.getExampleNative(), getExampleColor(this.view), false));
             }
 
 
             if ((card.getSynonym() != null && transportPreferences.getSynomymAvailability(context) == consts.AVAILABILITY_ON)
                     || (card.getAntonym() != null && transportPreferences.getAntonymAvailability(context) == consts.AVAILABILITY_ON)) {
-                String string = new String();
+                String string = "";
                 if ((card.getSynonym() != null && transportPreferences.getSynomymAvailability(context) == consts.AVAILABILITY_ON))
                     string += getResources().getString(R.string.synonym) + ": " + card.getSynonym();
                 if ((card.getAntonym() != null && transportPreferences.getAntonymAvailability(context) == consts.AVAILABILITY_ON)) {
-                    if (string != null)
+                    if (string.length() > 1)
                         string += "\n";
                     string += getResources().getString(R.string.antonym) + ": " + card.getAntonym();
                 }
@@ -195,7 +195,7 @@ public class MainActivity extends CardActivity {
 
     }
 
-    public void playSound(View view){
+    private void playSound(View view){
         if (isRealSound)
             soundManager.playSound();
         else

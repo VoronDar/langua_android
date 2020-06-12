@@ -7,6 +7,9 @@ import android.preference.PreferenceManager;
 import com.example.langua.ApproachManager.ApproachManager;
 import com.example.langua.declaration.consts;
 
+import java.util.prefs.Preferences;
+import java.util.prefs.PreferencesFactory;
+
 public class transportPreferences {
     public static String AVAILABLE_ID = "card_id_pref";                                             // indicate on ID you can use for creating new cards
 
@@ -352,5 +355,6 @@ public class transportPreferences {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         preferences.edit().putInt(ApproachManager.getSectionString(section)+AVAILABLE_ID, value).apply();
     }
+
 
 }

@@ -1,234 +1,85 @@
 package com.example.langua.cards;
 
-import androidx.annotation.Nullable;
+import java.util.Arrays;
+
+import static com.example.langua.declaration.consts.NOUN_LEVEL;
 
 public class VocabularyCard extends Card{
-    private String dialect;
     private String word;
     private String meaning;
     private String meaningNative;
     private String translate;
     private String transcription;
-    private String image;
-    private String tip;
     private String synonym;
     private String antonym;
     private String help;
-    private String callHelp;
     private String group;
     private String part;
-    private String exampleLearn;
-    private String exampleTranslate;
-    private String readSentence;
-    private String readSentenceAnswners;
-    private String columnWriteSentence;
-    private String columnWriteSentenceNative;
-    private String simular;
+    private String example;
+    private String exampleNative;
+    private String train;
+    private String trainNative;
 
-    public VocabularyCard(String id,
-                          String dialect, String word, String meaning, String meaningNative,
-                          String translate, String transcription, String image, String tip,
-                          String synonym, String antonym, String help, String callHelp, String group,
-                          String part, String exampleLearn, String exampleTranslate, String readSentence,
-                          String readSentenceAnswners, String columnWriteSentence, String columnWriteSentenceNative,
-                          String simular) {
-        super(id, 0, 0, 0);
-        this.dialect = dialect;
+    public VocabularyCard(String id, int repeatlevel, int practiceLevel, int repetitionDat, String word, String meaning, String meaningNative, String translate, String transcription, String synonym, String antonym, String help, String group, String part, String example, String exampleNative, String train, String trainNative, String mem) {
+        super(id, repeatlevel, practiceLevel, repetitionDat);
+        put(word, meaning, meaningNative, translate, transcription, synonym, antonym, help, group,
+                part, example, exampleNative, train, trainNative, mem);
+    }
+
+    private void put(String word, String meaning, String meaningNative, String translate, String transcription, String synonym, String antonym, String help, String group, String part, String example, String exampleNative, String train, String trainNative, String mem) {
         this.word = word;
         this.meaning = meaning;
         this.meaningNative = meaningNative;
         this.translate = translate;
         this.transcription = transcription;
-        this.image = image;
-        this.tip = tip;
         this.synonym = synonym;
         this.antonym = antonym;
         this.help = help;
-        this.callHelp = callHelp;
         this.group = group;
         this.part = part;
-        this.exampleLearn = exampleLearn;
-        this.exampleTranslate = exampleTranslate;
-        this.readSentence = readSentence;
-        this.readSentenceAnswners = readSentenceAnswners;
-        this.columnWriteSentence = columnWriteSentence;
-        this.columnWriteSentenceNative = columnWriteSentenceNative;
-        this.simular = simular;
-        this.mem = null;
-
-        setNullProgressCard();
-    }
-
-    public VocabularyCard(String id, String dialect, String word,
-                          String meaning, String meaningNativve, String translate, String transcription,
-                          String image, String tip, String synonym, String antonym, String mem,
-                          String help, String callHelp, String group, String part,
-                          String exampleLearn, String exampleTranslate, String readSentence,
-                          String readSentenceAnswners, String columnWriteSentence,
-                          String columnWriteSentenceNative, int repeatlevel, int practiceLevel,
-                          int repetitionDat, String simular) {
-        super(id, repeatlevel, practiceLevel, repetitionDat);
-        this.dialect = dialect;
-        this.word = word;
-        this.meaning = meaning;
-        this.meaningNative = meaningNativve;
-        this.translate = translate;
-        this.transcription = transcription;
-        this.image = image;
-        this.tip = tip;
-        this.synonym = synonym;
-        this.antonym = antonym;
+        this.example = example;
+        this.exampleNative = exampleNative;
+        this.train = train;
+        this.trainNative = trainNative;
         this.mem = mem;
-        this.help = help;
-        this.callHelp = callHelp;
-        this.group = group;
-        this.part = part;
-        this.exampleLearn = exampleLearn;
-        this.exampleTranslate = exampleTranslate;
-        this.readSentence = readSentence;
-        this.readSentenceAnswners = readSentenceAnswners;
-        this.columnWriteSentence = columnWriteSentence;
-        this.columnWriteSentenceNative = columnWriteSentenceNative;
-        this.simular = simular;
     }
 
-    // DELETE IT!!!!
-    public VocabularyCard(String id, String dialect, String word,
-                          String meaning, String meaningNativve, String translate, String transcription,
-                          String image, String tip, String synonym, String antonym, String mem,
-                          String help, String callHelp, String group, String part,
-                          String exampleLearn, String exampleTranslate, String readSentence,
-                          String readSentenceAnswners, String columnWriteSentence,
-                          String columnWriteSentenceNative, int repeatlevel, int practiceLevel,
-                          int repetitionDat, String simular, int mistakes) {
-        super(id, repeatlevel, practiceLevel, repetitionDat);
-        this.dialect = dialect;
-        this.word = word;
-        this.meaning = meaning;
-        this.meaningNative = meaningNativve;
-        this.translate = translate;
-        this.transcription = transcription;
-        this.image = image;
-        this.tip = tip;
-        this.synonym = synonym;
-        this.antonym = antonym;
-        this.mem = mem;
-        this.help = help;
-        this.callHelp = callHelp;
-        this.group = group;
-        this.part = part;
-        this.exampleLearn = exampleLearn;
-        this.exampleTranslate = exampleTranslate;
-        this.readSentence = readSentence;
-        this.readSentenceAnswners = readSentenceAnswners;
-        this.columnWriteSentence = columnWriteSentence;
-        this.columnWriteSentenceNative = columnWriteSentenceNative;
-        this.simular = simular;
-    }
-/*
-    public VocabularyCard(String id, String dialect, String word, String meaning,
-                           String meaningNative, String translate, String tip, String help, String callHelp,
-                           String group, String part, String exampleLearn, String exampleTranslate, String columnWriteSentence,
-                           String columnWriteSentenceNative) {
-        super(id, 0, 0, 0);
-        this.dialect = dialect;
-        this.word = word;
-        this.meaning = meaning;
-        this.meaningNative = meaningNative;
-        this.translate = translate;
-        this.tip = tip;
-        this.help = help;
-        this.callHelp = callHelp;
-        this.group = group;
-        this.part = part;
-        this.exampleLearn = exampleLearn;
-        this.exampleTranslate = exampleTranslate;
-        this.columnWriteSentence = columnWriteSentence;
-        this.columnWriteSentenceNative = columnWriteSentenceNative;
-        this.simular = null;
-        this.synonym = null;
-        this.antonym = null;
-        setNullProgressCard();
-    }
-
- */
-
-    public VocabularyCard(String id) {
-        super(id, 0, 0, 0);
-        this.dialect = null;
+    private void putNone() {
         this.word = null;
         this.meaning = null;
         this.meaningNative = null;
         this.translate = null;
         this.transcription = null;
-        this.image = null;
-        this.tip = null;
         this.synonym = null;
         this.antonym = null;
-        this.mem = null;
         this.help = null;
-        this.callHelp = null;
         this.group = null;
         this.part = null;
-        this.exampleLearn = null;
-        this.exampleTranslate = null;
-        this.readSentence = null;
-        this.readSentenceAnswners = null;
-        this.columnWriteSentence = null;
-        this.columnWriteSentenceNative = null;
-        this.simular = null;
+        this.example = null;
+        this.exampleNative = null;
+        this.train = null;
+        this.trainNative = null;
+        this.mem = null;
+    }
+
+
+    public VocabularyCard(String id, String word, String meaning, String meaningNative, String translate, String transcription, String synonym, String antonym, String help, String group, String part, String example, String exampleNative, String train, String trainNative, String mem) {
+        super(id, 0, 0, 0);
         setNullProgressCard();
+        put(word, meaning, meaningNative, translate, transcription, synonym, antonym, help, group,
+                part, example, exampleNative, train, trainNative, mem);
     }
 
     public VocabularyCard() {
-        super(null, 0, 0, 0);
-        this.dialect = null;
-        this.word = null;
-        this.meaning = null;
-        this.meaningNative = null;
-        this.translate = null;
-        this.transcription = null;
-        this.image = null;
-        this.tip = null;
-        this.synonym = null;
-        this.antonym = null;
-        this.mem = null;
-        this.help = null;
-        this.callHelp = null;
-        this.group = null;
-        this.part = null;
-        this.exampleLearn = null;
-        this.exampleTranslate = null;
-        this.readSentence = null;
-        this.readSentenceAnswners = null;
-        this.columnWriteSentence = null;
-        this.columnWriteSentenceNative = null;
-        this.simular = null;
+        super(null,NOUN_LEVEL,NOUN_LEVEL,0);
         setNullProgressCard();
+        putNone();
     }
 
-    public String getMeaningNative() {
-        return meaningNative;
-    }
-
-    public void setMeaningNative(String meaningNative) {
-        this.meaningNative = meaningNative;
-    }
-
-    public String getExampleLearn() {
-        return exampleLearn;
-    }
-
-    public void setExampleLearn(String exampleLearn) {
-        this.exampleLearn = exampleLearn;
-    }
-
-    public String getDialect() {
-        return dialect;
-    }
-
-    public void setDialect(String dialect) {
-        this.dialect = dialect;
+    public VocabularyCard(String id) {
+        super(id,NOUN_LEVEL,NOUN_LEVEL,0);
+        setNullProgressCard();
+        putNone();
     }
 
     public String getWord() {
@@ -247,6 +98,14 @@ public class VocabularyCard extends Card{
         this.meaning = meaning;
     }
 
+    public String getMeaningNative() {
+        return meaningNative;
+    }
+
+    public void setMeaningNative(String meaningNative) {
+        this.meaningNative = meaningNative;
+    }
+
     public String getTranslate() {
         return translate;
     }
@@ -261,22 +120,6 @@ public class VocabularyCard extends Card{
 
     public void setTranscription(String transcription) {
         this.transcription = transcription;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getTip() {
-        return tip;
-    }
-
-    public void setTip(String tip) {
-        this.tip = tip;
     }
 
     public String getSynonym() {
@@ -303,14 +146,6 @@ public class VocabularyCard extends Card{
         this.help = help;
     }
 
-    public String getCallHelp() {
-        return callHelp;
-    }
-
-    public void setCallHelp(String callHelp) {
-        this.callHelp = callHelp;
-    }
-
     public String getGroup() {
         return group;
     }
@@ -327,127 +162,112 @@ public class VocabularyCard extends Card{
         this.part = part;
     }
 
-    public String getExampleTranslate() {
-        return exampleTranslate;
+    public String getExample() {
+        return example;
     }
 
-    public void setExampleTranslate(String exampleTranslate) {
-        this.exampleTranslate = exampleTranslate;
+    public void setExample(String example) {
+        this.example = example;
     }
 
-    public String getReadSentence() {
-        return readSentence;
+    public String getExampleNative() {
+        return exampleNative;
     }
 
-    public void setReadSentence(String readSentence) {
-        this.readSentence = readSentence;
+    public void setExampleNative(String exampleNative) {
+        this.exampleNative = exampleNative;
     }
 
-    public String getReadSentenceAnswners() {
-        return readSentenceAnswners;
+    public String getTrain() {
+        return train;
     }
 
-    public void setReadSentenceAnswners(String readSentenceAnswners) {
-        this.readSentenceAnswners = readSentenceAnswners;
+    public void setTrain(String train) {
+        this.train = train;
     }
 
-    public String getColumnWriteSentence() {
-        return columnWriteSentence;
+    public String getTrainNative() {
+        return trainNative;
     }
 
-    public void setColumnWriteSentence(String columnWriteSentence) {
-        this.columnWriteSentence = columnWriteSentence;
+    public void setTrainNative(String trainNative) {
+        this.trainNative = trainNative;
     }
 
-    public String getColumnWriteSentenceNative() {
-        return columnWriteSentenceNative;
-    }
 
-    public void setColumnWriteSentenceNative(String columnWriteSentenceNative) {
-        this.columnWriteSentenceNative = columnWriteSentenceNative;
-    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    public String getSimular() {
-        return simular;
-    }
+        VocabularyCard that = (VocabularyCard) o;
 
-    public void setSimular(String simular) {
-        this.simular = simular;
-    }
-
-    public boolean checkFull(){                                                                     // return true if the cards is ready to use
-            return !(word == null || columnWriteSentenceNative == null || columnWriteSentence == null ||
-                    id == null || (translate == null && meaning == null && meaningNative == null));
+        if (!word.equals(that.word)) return false;
+        if (meaning != null ? !meaning.equals(that.meaning) : that.meaning != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (meaningNative != null ? !meaningNative.equals(that.meaningNative) : that.meaningNative != null)
+            return false;
+        if (translate != null ? !translate.equals(that.translate) : that.translate != null)
+            return false;
+        if (transcription != null ? !transcription.equals(that.transcription) : that.transcription != null)
+            return false;
+        if (synonym != null ? !synonym.equals(that.synonym) : that.synonym != null) return false;
+        if (antonym != null ? !antonym.equals(that.antonym) : that.antonym != null) return false;
+        if (help != null ? !help.equals(that.help) : that.help != null) return false;
+        if (group != null ? !group.equals(that.group) : that.group != null) return false;
+        if (part != null ? !part.equals(that.part) : that.part != null) return false;
+        if (example != null ? !example.equals(that.example) : that.example != null) return false;
+        if (exampleNative != null ? !exampleNative.equals(that.exampleNative) : that.exampleNative != null)
+            return false;
+        if (train != null ? !train.equals(that.train) : that.train != null) return false;
+        if (trainNative != null ? !trainNative.equals(that.trainNative) : that.trainNative != null)
+            return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return true;
     }
 
     @Override
-    public boolean equals(@Nullable Object obj) {
-        VocabularyCard another = (VocabularyCard)obj;
-        if (another.getColumnWriteSentence() == null)
-            return getColumnWriteSentence() == null;
-        else if (another.getColumnWriteSentenceNative() == null)
-            return getColumnWriteSentenceNative() == null;
-        else if (another.getMeaning() == null)
-            return getMeaning() == null;
-        else if (another.getMeaningNative() == null)
-            return getMeaningNative() == null;
-        else if (another.getTranslate() == null)
-            return getTranslate() == null;
-        else if (another.getTranscription() == null)
-            return getTranscription() == null;
-        else if (another.getAntonym() == null)
-            return getAntonym() == null;
-        else if (another.getExampleLearn() == null)
-            return getExampleLearn() == null;
-        else if (another.getExampleTranslate() == null)
-            return getExampleTranslate() == null;
-        else if (another.getHelp() == null)
-            return getHelp() == null;
-        else if (another.getGroup() == null)
-            return getGroup() == null;
-        else if (another.getPart() == null)
-            return getPart() == null;
-        return  getColumnWriteSentence().equals(another.getColumnWriteSentence()) &&
-                getColumnWriteSentenceNative().equals(another.getColumnWriteSentenceNative()) &&
-                getMeaning().equals(another.getMeaning()) &&
-                getMeaningNative().equals(another.getMeaningNative()) &&
-                getTranslate().equals(another.getTranslate()) &&
-                getTranscription().equals(another.getTranscription()) &&
-                getAntonym().equals(another.getAntonym()) &&
-                getSynonym().equals(another.getSynonym()) &&
-                getExampleLearn().equals(another.getExampleLearn()) &&
-                getExampleTranslate().equals(another.getExampleTranslate()) &&
-                getHelp().equals(another.getHelp()) &&
-                getGroup().equals(another.getGroup()) &&
-                getPart().equals(another.getPart()) &&
-                getWord().equals(another.getWord());
+    public int hashCode() {
+        int result = word.hashCode();
+        result += id.hashCode();
+        result = 31 * result + (meaning != null ? meaning.hashCode() : 0);
+        result = 31 * result + (meaningNative != null ? meaningNative.hashCode() : 0);
+        result = 31 * result + (translate != null ? translate.hashCode() : 0);
+        result = 31 * result + (transcription != null ? transcription.hashCode() : 0);
+        result = 31 * result + (synonym != null ? synonym.hashCode() : 0);
+        result = 31 * result + (antonym != null ? antonym.hashCode() : 0);
+        result = 31 * result + (help != null ? help.hashCode() : 0);
+        result = 31 * result + (group != null ? group.hashCode() : 0);
+        result = 31 * result + (part != null ? part.hashCode() : 0);
+        result = 31 * result + (example != null ? example.hashCode() : 0);
+        result = 31 * result + (exampleNative != null ? exampleNative.hashCode() : 0);
+        result = 31 * result + (train != null ? train.hashCode() : 0);
+        result = 31 * result + (trainNative != null ? trainNative.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
-        return super.toString() +
-                "-> VocabularyCard{" +
-                "dialect='" + dialect + '\'' +
-                ", word='" + word + '\'' +
+        return "VocabularyCard{" +
+                "word='" + word + '\'' +
                 ", meaning='" + meaning + '\'' +
                 ", meaningNative='" + meaningNative + '\'' +
                 ", translate='" + translate + '\'' +
                 ", transcription='" + transcription + '\'' +
-                ", image='" + image + '\'' +
-                ", tip='" + tip + '\'' +
                 ", synonym='" + synonym + '\'' +
                 ", antonym='" + antonym + '\'' +
                 ", help='" + help + '\'' +
-                ", callHelp='" + callHelp + '\'' +
                 ", group='" + group + '\'' +
                 ", part='" + part + '\'' +
-                ", exampleLearn='" + exampleLearn + '\'' +
-                ", exampleTranslate='" + exampleTranslate + '\'' +
-                ", readSentence='" + readSentence + '\'' +
-                ", readSentenceAnswners='" + readSentenceAnswners + '\'' +
-                ", columnWriteSentence='" + columnWriteSentence + '\'' +
-                ", columnWriteSentenceNative='" + columnWriteSentenceNative + '\'' +
-                ", simular='" + simular + '\'' +
+                ", example='" + example + '\'' +
+                ", exampleNative='" + exampleNative + '\'' +
+                ", train='" + train + '\'' +
+                ", trainNative='" + trainNative + '\'' +
+                ", id='" + id + '\'' +
+                ", repeatlevel=" + repeatlevel +
+                ", practiceLevel=" + practiceLevel +
+                ", repetitionDat=" + repetitionDat +
+                ", mem='" + mem + '\'' +
                 '}';
     }
 }

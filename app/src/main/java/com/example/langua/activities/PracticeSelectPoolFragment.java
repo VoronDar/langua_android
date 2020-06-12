@@ -2,8 +2,6 @@ package com.example.langua.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +15,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.langua.declaration.consts;
-import com.example.langua.transportPreferences.transportPreferences;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
 import com.example.langua.units.PracticeTestsUnit;
 import com.example.langua.adapters.PracticeTypeAdapter;
 import com.example.langua.R;

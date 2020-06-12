@@ -1,4 +1,4 @@
-package com.example.langua.DBHelpers;
+package com.example.langua.Databases.DBHelpers;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.CREATE_VOCABULARY_REPEAT_COMMAND;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.DROP_TODAY_REPEAT_TABLE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.CREATE_VOCABULARY_REPEAT_COMMAND;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.DROP_TODAY_REPEAT_TABLE;
 
 public class DBHelperTodayPhraseologyRepeat extends SQLiteOpenHelper {
 

@@ -1,19 +1,15 @@
-package com.example.langua.transportSQL;
+package com.example.langua.Databases.transportSQL;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
-import android.util.Log;
 
 import com.example.langua.cards.Card;
-import com.example.langua.DBHelpers.DBHelperPhraseology;
-import com.example.langua.DBHelpers.DBHelperTodayPhraseologyPractise;
-import com.example.langua.DBHelpers.DBHelperTodayPhraseologyRepeat;
-import com.example.langua.DBHelpers.DBHelperTodayPhraseologyStudy;
+import com.example.langua.Databases.DBHelpers.DBHelperPhraseology;
+import com.example.langua.Databases.DBHelpers.DBHelperTodayPhraseologyPractise;
+import com.example.langua.Databases.DBHelpers.DBHelperTodayPhraseologyRepeat;
+import com.example.langua.Databases.DBHelpers.DBHelperTodayPhraseologyStudy;
 import com.example.langua.cards.PhraseologyCard;
-import com.example.langua.ruler.CardRepeatManage;
-import com.example.langua.ruler.Ruler;
 import com.example.langua.declaration.consts;
 import com.example.langua.transportPreferences.transportPreferences;
 
@@ -22,30 +18,29 @@ import java.util.ArrayList;
 
 import static android.provider.BaseColumns._ID;
 import static com.example.langua.ApproachManager.ApproachManager.PHRASEOLOGY_INDEX;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_CALL_HELP;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_EXAMPLE;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_EXAMPLE_TRANSLATE;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_GROUP;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_HELP;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MEANING;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MEANING_NATIVE;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MEM;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MISTAKES;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_PART;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_PRACTICE_LEVEL;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_REPEAT_LEVEL;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_REPETITION_DAY;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_SPECIFIC_DIALECT;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_TIP;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_TRANSLATE;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_WORD;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_WRITE_SENTENCE;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_WRITE_SENTENCE_NATIVE;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.GET_RANDOM_FROM_STUDY;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.PRACTICE_TABLE_NAME;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.TABLE_NAME;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.TODAY_REPEAT_TABLE_NAME;
-import static com.example.langua.contracts.PhraseologyContract.PhraseologyEntry.TODAY_TABLE_STUDY_NAME;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_CALL_HELP;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_EXAMPLE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_EXAMPLE_TRANSLATE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_GROUP;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_HELP;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MEANING;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MEANING_NATIVE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_MEM;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_PART;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_PRACTICE_LEVEL;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_REPEAT_LEVEL;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_REPETITION_DAY;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_SPECIFIC_DIALECT;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_TIP;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_TRANSLATE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_WORD;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_WRITE_SENTENCE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.COLUMN_WRITE_SENTENCE_NATIVE;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.GET_RANDOM_FROM_STUDY;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.PRACTICE_TABLE_NAME;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.TABLE_NAME;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.TODAY_REPEAT_TABLE_NAME;
+import static com.example.langua.Databases.contracts.PhraseologyContract.PhraseologyEntry.TODAY_TABLE_STUDY_NAME;
 
 
 /*
@@ -127,7 +122,6 @@ public class TransportSQLPhraseology extends TransportSQL implements TransportSQ
         int repeatLevel = cursor.getInt(cursor.getColumnIndex(COLUMN_REPEAT_LEVEL));
         int practiceLevel = cursor.getInt(cursor.getColumnIndex(COLUMN_PRACTICE_LEVEL));
         int repetitionDat = cursor.getInt(cursor.getColumnIndex(COLUMN_REPETITION_DAY));
-        int mistakes = cursor.getInt(cursor.getColumnIndex(COLUMN_MISTAKES));
         return new PhraseologyCard(id, dialect, word, meaning, meaning_Native, translate,
                 tip, mem, help, callHelp, group, part, exampleLearn, exampleTranslate,
                 columnWriteSentence, columnWriteSentenceNative, repeatLevel, practiceLevel,
@@ -194,7 +188,6 @@ public class TransportSQLPhraseology extends TransportSQL implements TransportSQ
         contentValues.put(COLUMN_REPEAT_LEVEL, card.getRepeatlevel());
         contentValues.put(COLUMN_PRACTICE_LEVEL, card.getPracticeLevel());
         contentValues.put(COLUMN_REPETITION_DAY, card.getRepetitionDat());
-        contentValues.put(COLUMN_MISTAKES, 0);
         return contentValues;
     }
     @Override protected ContentValues fillContentValuesForPractice(Card getCard){

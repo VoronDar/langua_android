@@ -30,8 +30,8 @@ import com.example.langua.activities.mainPlain;
 import com.example.langua.adapters.TextBlockAdapter;
 import com.example.langua.cards.Card;
 import com.example.langua.ruler.Ruler;
-import com.example.langua.transportSQL.MainTransportSQL;
-import com.example.langua.transportSQL.TransportSQLInterface;
+import com.example.langua.Databases.transportSQL.MainTransportSQL;
+import com.example.langua.Databases.transportSQL.TransportSQLInterface;
 import com.example.langua.units.TextBlock;
 
 
